@@ -1,0 +1,27 @@
+int led=3;
+int IR_Sensor=5;
+int peoplecount=0;
+
+void setup() {
+  // put your setup code here, to run once:
+  pinMode(led,OUTPUT);
+  pinMode(IR_Sensor,INPUT);
+  Serial.begin(9600);
+}
+
+void loop() {
+  // put your main code here, to run repeatedly:
+  int read=digitalRead(IR_Sensor);
+  Serial.println(read);
+  if(read==HIGH)
+  {
+    digitalWrite(led,HIGH);
+    peoplecount++;
+    Serial.println(“
+
+  }
+  else
+  {
+    digitalWrite(led,LOW);
+  }
+}
